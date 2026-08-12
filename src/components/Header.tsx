@@ -25,6 +25,7 @@ const navItems = [
   { label: 'Tech Stack', href: '#tech-stack' },
   { label: 'Process', href: '#process' },
   { label: 'Company Info', href: '#company-info' },
+  { label: 'Payments', href: '#payment-info' },
   { label: 'Contact', href: '#contact' },
 ];
 

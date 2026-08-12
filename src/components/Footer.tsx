@@ -57,6 +57,9 @@ export function Footer() {
               <Link href="#company-info" style={{ textDecoration: 'none', color: '#94a3b8', fontSize: '0.875rem' }}>
                 Company Registry
               </Link>
+              <Link href="#payment-info" style={{ textDecoration: 'none', color: '#94a3b8', fontSize: '0.875rem' }}>
+                Payment Details
+              </Link>
               <Link href="#contact" style={{ textDecoration: 'none', color: '#94a3b8', fontSize: '0.875rem' }}>
                 Contact
               </Link>

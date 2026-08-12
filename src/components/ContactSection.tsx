@@ -23,7 +23,11 @@ import {
   IconMapPin,
   IconFileText,
   IconBuildingSkyscraper,
-  IconShieldCheck,
+  IconCreditCard,
+  IconExternalLink,
+  IconAt,
+  IconClock,
+  IconBuildingBank,
 } from '@tabler/icons-react';
 
 export function ContactSection() {
@@ -33,6 +37,9 @@ export function ContactSection() {
   const nipClipboard = useClipboard({ timeout: 2000 });
   const krsClipboard = useClipboard({ timeout: 2000 });
   const addressClipboard = useClipboard({ timeout: 2000 });
+  const ibanClipboard = useClipboard({ timeout: 2000 });
+  const wiseTagClipboard = useClipboard({ timeout: 2000 });
+  const wiseLinkClipboard = useClipboard({ timeout: 2000 });
 
   return (
     <Box
@@ -47,17 +54,17 @@ export function ContactSection() {
       <Container size="xl">
         <Stack align="center" gap="xs" mb={{ base: 40, md: 50 }}>
           <Badge color="cyan" size="lg" radius="sm">
-            Direct Communication &amp; Official Registry
+            Direct Communication, Registry &amp; Payment Details
           </Badge>
           <Title order={2} fz={{ base: '2rem', sm: '2.8rem' }} ta="center" fw={800}>
-            Get in Touch With MOTHERBOARD
+            Get in Touch &amp; Company Info
           </Title>
-          <Text c="dimmed" fz="lg" maw={650} ta="center">
-            Ready to discuss your project or scale your team? Get in touch directly via phone or email.
+          <Text c="dimmed" fz="lg" maw={700} ta="center">
+            Reach out directly to discuss your project, view official corporate registration details, or access company payment links.
           </Text>
         </Stack>
 
-        <SimpleGrid cols={{ base: 1, md: 2 }} spacing={30}>
+        <SimpleGrid cols={{ base: 1, md: 3 }} spacing={{ base: 'lg', md: 'xl' }}>
           {/* 1. Direct Contact Card */}
           <Paper
             className="glass-card glow-box"
@@ -71,7 +78,7 @@ export function ContactSection() {
               justifyContent: 'space-between',
             }}
           >
-            <Box>
+            <Box mb="md">
               <Group justify="space-between" align="center" mb="md">
                 <Badge color="cyan" variant="gradient" gradient={{ from: 'cyan', to: 'blue' }}>
                   DIRECT CHANNELS
@@ -81,15 +88,15 @@ export function ContactSection() {
                 </Text>
               </Group>
 
-              <Title order={3} fz="1.4rem" fw={700} mb="xs">
-                Direct Contact Channels
+              <Title order={3} fz="1.35rem" fw={700} mb="xs">
+                Direct Contact
               </Title>
-              <Text size="sm" c="dimmed" mb="xl">
-                Reach out by phone or email to discuss your project requirements or hiring needs.
+              <Text size="sm" c="dimmed">
+                Reach out by phone or email to discuss your project or team scaling needs.
               </Text>
             </Box>
 
-            <Stack gap="md" style={{ flex: 1, justifyContent: 'center' }}>
+            <Stack gap="md" style={{ flex: 1, justifyContent: 'flex-start' }}>
               {/* Direct Phone Card */}
               <Paper
                 p="md"
@@ -99,12 +106,12 @@ export function ContactSection() {
                   border: '1px solid rgba(0, 240, 255, 0.15)',
                 }}
               >
-                <Group justify="space-between" align="center" wrap="wrap" gap="sm">
-                  <Group gap="md">
-                    <ThemeIcon size={44} radius="md" color="cyan" variant="light">
-                      <IconPhoneCall size={22} />
+                <Group justify="space-between" align="center" wrap="nowrap" gap="sm">
+                  <Group gap="sm" wrap="nowrap" style={{ overflow: 'hidden' }}>
+                    <ThemeIcon size={40} radius="md" color="cyan" variant="light" style={{ flexShrink: 0 }}>
+                      <IconPhoneCall size={20} />
                     </ThemeIcon>
-                    <Box>
+                    <Box style={{ overflow: 'hidden' }}>
                       <Text size="xs" c="dimmed" fw={600}>
                         DIRECT PHONE
                       </Text>
@@ -112,9 +119,9 @@ export function ContactSection() {
                         component="a"
                         href="tel:+48883934010"
                         fw={800}
-                        fz="1.15rem"
+                        fz="1.05rem"
                         c="cyan.3"
-                        style={{ textDecoration: 'none' }}
+                        style={{ textDecoration: 'none', display: 'block', whiteSpace: 'nowrap' }}
                       >
                         +48 883 934 010
                       </Text>
@@ -131,6 +138,7 @@ export function ContactSection() {
                       }
                       onClick={() => phoneClipboard.copy('+48 883 934 010')}
                       aria-label="Copy phone number +48 883 934 010"
+                      style={{ flexShrink: 0 }}
                     >
                       {phoneClipboard.copied ? 'Copied' : 'Copy'}
                     </Button>
@@ -147,12 +155,12 @@ export function ContactSection() {
                   border: '1px solid rgba(0, 240, 255, 0.15)',
                 }}
               >
-                <Group justify="space-between" align="center" wrap="wrap" gap="sm">
-                  <Group gap="md">
-                    <ThemeIcon size={44} radius="md" color="cyan" variant="light">
-                      <IconMail size={22} />
+                <Group justify="space-between" align="center" wrap="nowrap" gap="sm">
+                  <Group gap="sm" wrap="nowrap" style={{ overflow: 'hidden' }}>
+                    <ThemeIcon size={40} radius="md" color="cyan" variant="light" style={{ flexShrink: 0 }}>
+                      <IconMail size={20} />
                     </ThemeIcon>
-                    <Box>
+                    <Box style={{ overflow: 'hidden' }}>
                       <Text size="xs" c="dimmed" fw={600}>
                         OFFICIAL EMAIL
                       </Text>
@@ -160,9 +168,9 @@ export function ContactSection() {
                         component="a"
                         href="mailto:biuro@motherboard.pl"
                         fw={800}
-                        fz="1.15rem"
+                        fz="0.95rem"
                         c="cyan.3"
-                        style={{ textDecoration: 'none' }}
+                        style={{ textDecoration: 'none', display: 'block', textOverflow: 'ellipsis', overflow: 'hidden' }}
                       >
                         biuro@motherboard.pl
                       </Text>
@@ -179,10 +187,41 @@ export function ContactSection() {
                       }
                       onClick={() => emailClipboard.copy('biuro@motherboard.pl')}
                       aria-label="Copy email biuro@motherboard.pl"
+                      style={{ flexShrink: 0 }}
                     >
                       {emailClipboard.copied ? 'Copied' : 'Copy'}
                     </Button>
                   </Tooltip>
+                </Group>
+              </Paper>
+
+              {/* Support Hours Card */}
+              <Paper
+                p="md"
+                radius="lg"
+                style={{
+                  background: 'rgba(0, 240, 255, 0.04)',
+                  border: '1px solid rgba(0, 240, 255, 0.15)',
+                }}
+              >
+                <Group justify="space-between" align="center" wrap="nowrap" gap="sm">
+                  <Group gap="sm" wrap="nowrap">
+                    <ThemeIcon size={40} radius="md" color="cyan" variant="light" style={{ flexShrink: 0 }}>
+                      <IconClock size={20} />
+                    </ThemeIcon>
+                    <Box>
+                      <Text size="xs" c="dimmed" fw={600}>
+                        BUSINESS HOURS
+                      </Text>
+                      <Text fw={700} fz="0.9rem" c="cyan.3">
+                        Mon – Fri, 09:00 – 17:00 CET
+                      </Text>
+                    </Box>
+                  </Group>
+
+                  <Badge size="xs" variant="outline" color="teal">
+                    Active
+                  </Badge>
                 </Group>
               </Paper>
             </Stack>
@@ -202,7 +241,7 @@ export function ContactSection() {
               justifyContent: 'space-between',
             }}
           >
-            <Box mb="xl">
+            <Box mb="md">
               <Group justify="space-between" align="center" mb="md">
                 <Badge color="cyan" variant="gradient" gradient={{ from: 'cyan', to: 'blue' }}>
                   CORPORATE ENTITY
@@ -212,17 +251,17 @@ export function ContactSection() {
                 </Text>
               </Group>
 
-              <Group justify="space-between" align="center" wrap="wrap" gap="sm">
-                <Box>
-                  <Title order={3} fz="1.4rem" fw={800} mb={2}>
+              <Group justify="space-between" align="center" wrap="nowrap" gap="xs">
+                <Box style={{ overflow: 'hidden' }}>
+                  <Title order={3} fz="1.25rem" fw={800} mb={2} style={{ whiteSpace: 'nowrap', textOverflow: 'ellipsis', overflow: 'hidden' }}>
                     MOTHERBOARD sp. z o.o.
                   </Title>
                   <Text size="xs" c="dimmed">
-                    Official Polish Commercial Register Entity
+                    Official Polish Commercial Register
                   </Text>
                 </Box>
 
-                <Tooltip label={companyNameClipboard.copied ? 'Copied!' : 'Copy company name'}>
+                <Tooltip label={companyNameClipboard.copied ? 'Copied!' : 'Copy name'}>
                   <Button
                     size="xs"
                     variant="light"
@@ -232,6 +271,7 @@ export function ContactSection() {
                     }
                     onClick={() => companyNameClipboard.copy('MOTHERBOARD sp. z o.o.')}
                     aria-label="Copy company name MOTHERBOARD sp. z o.o."
+                    style={{ flexShrink: 0 }}
                   >
                     {companyNameClipboard.copied ? 'Copied' : 'Copy'}
                   </Button>
@@ -239,7 +279,7 @@ export function ContactSection() {
               </Group>
             </Box>
 
-            <Stack gap="md">
+            <Stack gap="md" style={{ flex: 1, justifyContent: 'flex-start' }}>
               {/* NIP / VAT ID Tile */}
               <Paper
                 p="md"
@@ -249,10 +289,10 @@ export function ContactSection() {
                   border: '1px solid rgba(0, 240, 255, 0.15)',
                 }}
               >
-                <Group justify="space-between" align="center" wrap="wrap" gap="sm">
-                  <Group gap="md">
-                    <ThemeIcon size={44} radius="md" color="cyan" variant="light">
-                      <IconFileText size={22} />
+                <Group justify="space-between" align="center" wrap="nowrap" gap="sm">
+                  <Group gap="sm" wrap="nowrap">
+                    <ThemeIcon size={40} radius="md" color="cyan" variant="light" style={{ flexShrink: 0 }}>
+                      <IconFileText size={20} />
                     </ThemeIcon>
                     <Box>
                       <Text size="xs" c="dimmed" fw={600}>
@@ -260,7 +300,7 @@ export function ContactSection() {
                       </Text>
                       <Text
                         fw={800}
-                        fz="1.15rem"
+                        fz="1.05rem"
                         c="cyan.3"
                         style={{ fontFamily: 'var(--font-geist-mono)' }}
                       >
@@ -279,6 +319,7 @@ export function ContactSection() {
                       }
                       onClick={() => nipClipboard.copy('9552587539')}
                       aria-label="Copy NIP 9552587539"
+                      style={{ flexShrink: 0 }}
                     >
                       {nipClipboard.copied ? 'Copied' : 'Copy'}
                     </Button>
@@ -295,18 +336,18 @@ export function ContactSection() {
                   border: '1px solid rgba(0, 240, 255, 0.15)',
                 }}
               >
-                <Group justify="space-between" align="center" wrap="wrap" gap="sm">
-                  <Group gap="md">
-                    <ThemeIcon size={44} radius="md" color="cyan" variant="light">
-                      <IconBuildingSkyscraper size={22} />
+                <Group justify="space-between" align="center" wrap="nowrap" gap="sm">
+                  <Group gap="sm" wrap="nowrap">
+                    <ThemeIcon size={40} radius="md" color="cyan" variant="light" style={{ flexShrink: 0 }}>
+                      <IconBuildingSkyscraper size={20} />
                     </ThemeIcon>
                     <Box>
                       <Text size="xs" c="dimmed" fw={600}>
-                        KRS
+                        KRS NUMBER
                       </Text>
                       <Text
                         fw={800}
-                        fz="1.15rem"
+                        fz="1.05rem"
                         c="cyan.3"
                         style={{ fontFamily: 'var(--font-geist-mono)' }}
                       >
@@ -325,6 +366,7 @@ export function ContactSection() {
                       }
                       onClick={() => krsClipboard.copy('0001168436')}
                       aria-label="Copy KRS 0001168436"
+                      style={{ flexShrink: 0 }}
                     >
                       {krsClipboard.copied ? 'Copied' : 'Copy'}
                     </Button>
@@ -341,16 +383,16 @@ export function ContactSection() {
                   border: '1px solid rgba(0, 240, 255, 0.15)',
                 }}
               >
-                <Group justify="space-between" align="center" wrap="wrap" gap="sm">
-                  <Group gap="md" style={{ flex: 1, minWidth: 200 }}>
-                    <ThemeIcon size={44} radius="md" color="cyan" variant="light">
-                      <IconMapPin size={22} />
+                <Group justify="space-between" align="center" wrap="nowrap" gap="sm">
+                  <Group gap="sm" wrap="nowrap" style={{ overflow: 'hidden' }}>
+                    <ThemeIcon size={40} radius="md" color="cyan" variant="light" style={{ flexShrink: 0 }}>
+                      <IconMapPin size={20} />
                     </ThemeIcon>
-                    <Box style={{ flex: 1 }}>
+                    <Box style={{ overflow: 'hidden' }}>
                       <Text size="xs" c="dimmed" fw={600}>
                         REGISTERED ADDRESS
                       </Text>
-                      <Text fw={700} fz="0.95rem" c="cyan.3">
+                      <Text fw={700} fz="0.85rem" c="cyan.3" style={{ lineHeight: 1.3 }}>
                         Aleja Powstańców Wielkopolskich 78A / LU2, 70-110 Szczecin, Poland
                       </Text>
                     </Box>
@@ -370,10 +412,212 @@ export function ContactSection() {
                         )
                       }
                       aria-label="Copy address"
+                      style={{ flexShrink: 0 }}
                     >
                       {addressClipboard.copied ? 'Copied' : 'Copy'}
                     </Button>
                   </Tooltip>
+                </Group>
+              </Paper>
+            </Stack>
+          </Paper>
+
+          {/* 3. Official Payment & Banking Details Box */}
+          <Paper
+            id="payment-info"
+            className="glass-card glow-box"
+            p={{ base: 'lg', sm: 'xl' }}
+            radius="xl"
+            style={{
+              background: 'linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(7, 9, 14, 0.95) 100%)',
+              border: '1px solid rgba(0, 240, 255, 0.3)',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+            }}
+          >
+            <Box mb="md">
+              <Group justify="space-between" align="center" mb="md">
+                <Badge color="cyan" variant="gradient" gradient={{ from: 'cyan', to: 'blue' }}>
+                  PAYMENT DETAILS
+                </Badge>
+                <Text size="xs" c="cyan.4" fw={600}>
+                  Global Bank &amp; Wise
+                </Text>
+              </Group>
+
+              <Title order={3} fz="1.35rem" fw={700} mb="xs">
+                Banking &amp; Transfers
+              </Title>
+              <Text size="sm" c="dimmed">
+                Official company IBAN bank account details and instant Wise payment channels.
+              </Text>
+            </Box>
+
+            <Stack gap="md" style={{ flex: 1, justifyContent: 'flex-start' }}>
+              {/* IBAN Tile */}
+              <Paper
+                p="md"
+                radius="lg"
+                style={{
+                  background: 'rgba(0, 240, 255, 0.04)',
+                  border: '1px solid rgba(0, 240, 255, 0.15)',
+                }}
+              >
+                <Group justify="space-between" align="center" wrap="nowrap" gap="sm">
+                  <Group gap="sm" wrap="nowrap" style={{ overflow: 'hidden' }}>
+                    <ThemeIcon size={40} radius="md" color="cyan" variant="light" style={{ flexShrink: 0 }}>
+                      <IconBuildingBank size={20} />
+                    </ThemeIcon>
+                    <Box style={{ overflow: 'hidden' }}>
+                      <Text size="xs" c="dimmed" fw={600}>
+                        IBAN ACCOUNT NUMBER
+                      </Text>
+                      <Text
+                        fw={800}
+                        fz="0.95rem"
+                        c="cyan.3"
+                        style={{
+                          fontFamily: 'var(--font-geist-mono)',
+                          whiteSpace: 'nowrap',
+                        }}
+                      >
+                        BE98 9058 9211 7693
+                      </Text>
+                    </Box>
+                  </Group>
+
+                  <Tooltip label={ibanClipboard.copied ? 'Copied!' : 'Copy IBAN'}>
+                    <Button
+                      size="xs"
+                      variant="light"
+                      color={ibanClipboard.copied ? 'teal' : 'cyan'}
+                      leftSection={
+                        ibanClipboard.copied ? <IconCheck size={14} /> : <IconCopy size={14} />
+                      }
+                      onClick={() => ibanClipboard.copy('BE98905892117693')}
+                      aria-label="Copy IBAN BE98905892117693"
+                      style={{ flexShrink: 0 }}
+                    >
+                      {ibanClipboard.copied ? 'Copied' : 'Copy'}
+                    </Button>
+                  </Tooltip>
+                </Group>
+              </Paper>
+
+              {/* WISE Tag Tile */}
+              <Paper
+                p="md"
+                radius="lg"
+                style={{
+                  background: 'rgba(0, 240, 255, 0.04)',
+                  border: '1px solid rgba(0, 240, 255, 0.15)',
+                }}
+              >
+                <Group justify="space-between" align="center" wrap="nowrap" gap="sm">
+                  <Group gap="sm" wrap="nowrap" style={{ overflow: 'hidden' }}>
+                    <ThemeIcon size={40} radius="md" color="cyan" variant="light" style={{ flexShrink: 0 }}>
+                      <IconAt size={20} />
+                    </ThemeIcon>
+                    <Box style={{ overflow: 'hidden' }}>
+                      <Text size="xs" c="dimmed" fw={600}>
+                        WISE TAG
+                      </Text>
+                      <Text
+                        fw={800}
+                        fz="1.05rem"
+                        c="cyan.3"
+                        style={{ fontFamily: 'var(--font-geist-mono)' }}
+                      >
+                        @motherboardspzoo
+                      </Text>
+                    </Box>
+                  </Group>
+
+                  <Tooltip label={wiseTagClipboard.copied ? 'Copied!' : 'Copy Wise Tag'}>
+                    <Button
+                      size="xs"
+                      variant="light"
+                      color={wiseTagClipboard.copied ? 'teal' : 'cyan'}
+                      leftSection={
+                        wiseTagClipboard.copied ? <IconCheck size={14} /> : <IconCopy size={14} />
+                      }
+                      onClick={() => wiseTagClipboard.copy('@motherboardspzoo')}
+                      aria-label="Copy Wise Tag @motherboardspzoo"
+                      style={{ flexShrink: 0 }}
+                    >
+                      {wiseTagClipboard.copied ? 'Copied' : 'Copy'}
+                    </Button>
+                  </Tooltip>
+                </Group>
+              </Paper>
+
+              {/* WISE Payment Link Tile */}
+              <Paper
+                p="md"
+                radius="lg"
+                style={{
+                  background: 'rgba(0, 240, 255, 0.04)',
+                  border: '1px solid rgba(0, 240, 255, 0.15)',
+                }}
+              >
+                <Group justify="space-between" align="center" wrap="nowrap" gap="sm">
+                  <Group gap="sm" wrap="nowrap" style={{ overflow: 'hidden' }}>
+                    <ThemeIcon size={40} radius="md" color="cyan" variant="light" style={{ flexShrink: 0 }}>
+                      <IconCreditCard size={20} />
+                    </ThemeIcon>
+                    <Box style={{ overflow: 'hidden' }}>
+                      <Text size="xs" c="dimmed" fw={600}>
+                        WISE PAYMENT LINK
+                      </Text>
+                      <Text
+                        component="a"
+                        href="https://wise.com/pay/business/motherboardspzoo"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        fw={700}
+                        fz="0.85rem"
+                        c="cyan.3"
+                        style={{
+                          textDecoration: 'none',
+                          display: 'block',
+                          whiteSpace: 'nowrap',
+                          textOverflow: 'ellipsis',
+                          overflow: 'hidden',
+                        }}
+                      >
+                        wise.com/pay/business/motherboardspzoo
+                      </Text>
+                    </Box>
+                  </Group>
+
+                  <Group gap={6} wrap="nowrap" style={{ flexShrink: 0 }}>
+                    <Button
+                      component="a"
+                      href="https://wise.com/pay/business/motherboardspzoo"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      size="xs"
+                      variant="gradient"
+                      gradient={{ from: 'cyan', to: 'blue', deg: 135 }}
+                      rightSection={<IconExternalLink size={12} />}
+                      aria-label="Pay via Wise payment page"
+                    >
+                      Pay
+                    </Button>
+
+                    <Tooltip label={wiseLinkClipboard.copied ? 'Copied!' : 'Copy Link'}>
+                      <Button
+                        size="xs"
+                        variant="light"
+                        color={wiseLinkClipboard.copied ? 'teal' : 'cyan'}
+                        onClick={() => wiseLinkClipboard.copy('https://wise.com/pay/business/motherboardspzoo')}
+                        aria-label="Copy Wise payment link"
+                      >
+                        {wiseLinkClipboard.copied ? <IconCheck size={14} /> : <IconCopy size={14} />}
+                      </Button>
+                    </Tooltip>
+                  </Group>
                 </Group>
               </Paper>
             </Stack>
