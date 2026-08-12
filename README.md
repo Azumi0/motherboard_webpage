@@ -29,8 +29,34 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Deploy on Netlify
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The easiest way to deploy this Next.js app on Netlify is via continuous deployment with Git or using the Netlify CLI.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Option 1: Netlify Web UI (Git Integration)
+
+1. Push your repository to GitHub, GitLab, or Bitbucket.
+2. Log in to [Netlify](https://app.netlify.com/).
+3. Click **Add new site** > **Import an existing project**.
+4. Connect your Git provider and select this repository.
+5. Netlify will automatically detect Next.js and apply the settings from [`netlify.toml`](file:///home/przemek/work/priv/motherboard_webpage/netlify.toml):
+   - **Build command:** `npm run build`
+   - **Publish directory:** `.next`
+6. Click **Deploy site**.
+
+### Option 2: Netlify CLI
+
+You can also deploy directly from the command line:
+
+```bash
+# Install Netlify CLI globally (optional) or run via npx
+npx netlify-cli login
+npx netlify-cli init
+npx netlify-cli deploy --build --prod
+```
+
+### Configuration
+
+This project includes a [`netlify.toml`](file:///home/przemek/work/priv/motherboard_webpage/netlify.toml) file preconfigured with the `@netlify/plugin-nextjs` plugin for optimal Server-Side Rendering (SSR), Server Actions, and API route support.
+
+For more details, check out the [Netlify Next.js Documentation](https://docs.netlify.com/integrations/frameworks/next-js/).
