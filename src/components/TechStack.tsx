@@ -94,10 +94,10 @@ export function TechStack() {
             Technologies &amp; Engineering Standards
           </Badge>
           <Title order={2} fz={{ base: '2rem', sm: '2.8rem' }} ta="center" fw={800}>
-            Battle-Tested Tech Stack for Scalable Systems
+            Tech Stack
           </Title>
           <Text c="dimmed" fz="lg" maw={650} ta="center">
-            We leverage state-of-the-art tools to deliver fast, secure, and easily maintainable codebases.
+            We use reliable tools to deliver fast, secure, and maintainable software.
           </Text>
         </Stack>
 
@@ -189,11 +189,10 @@ export function TechStack() {
                   FLEXIBILITY &amp; ADAPTABILITY
                 </Badge>
                 <Title order={3} fz={{ base: '1.25rem', sm: '1.5rem' }} fw={800} lh={1.3}>
-                  &ldquo;Next.js is our stack of choice for web platforms, but we adapt effortlessly
-                  to your stack, tooling, and workflow.&rdquo;
+                  &ldquo;Next.js is our stack of choice for web platforms, but we work with your preferred tools and workflow.&rdquo;
                 </Title>
                 <Text size="sm" c="dimmed" mt={4}>
-                  Whether your team uses AWS or GCP, Jira or Linear, GitHub or GitLab, customized Docker setups or serverless platforms—our engineers seamlessly align with your existing ecosystem on day one.
+                  Whether your team uses AWS or GCP, Jira or Linear, GitHub or GitLab, or custom Docker setups, our engineers adapt to your existing setup.
                 </Text>
               </Box>
             </Group>

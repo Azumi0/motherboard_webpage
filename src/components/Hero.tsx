@@ -89,8 +89,7 @@ export function Hero() {
               lh={1.6}
               style={{ maxWidth: '600px' }}
             >
-              We provide top-tier developers, DevOps specialists, and managers to scale your team—or
-              build your web applications, secure VPNs, and remote workspaces from start to finish.
+              We provide senior developers, DevOps specialists, and tech leaders to expand your team, or we build your web applications, secure VPNs, and remote workspaces from scratch.
             </Text>
 
             <Group gap="md" pt="xs">

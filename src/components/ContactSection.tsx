@@ -85,7 +85,7 @@ export function ContactSection() {
                 Direct Contact Channels
               </Title>
               <Text size="sm" c="dimmed" mb="xl">
-                Ready to discuss your project or scale your team? Get in touch directly with our leadership.
+                Reach out by phone or email to discuss your project requirements or hiring needs.
               </Text>
             </Box>
 

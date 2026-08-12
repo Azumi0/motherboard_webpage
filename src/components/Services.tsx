@@ -36,12 +36,12 @@ const staffAugmentation = [
     title: 'Full-Stack & Frontend Developers',
     badge: 'Next.js / React Specialists',
     description:
-      'Senior developers ready to plug straight into your team. Expert mastery of Next.js App Router, React, TypeScript, Node.js, and high-load web architectures.',
+      'Senior developers ready to integrate into your engineering team. Skilled in Next.js App Router, React, TypeScript, Node.js, and high-load web architectures.',
     highlights: [
-      'Senior-level engineers (5+ years avg experience)',
-      'Immediate velocity & clean TypeScript code',
-      'Modern frontend frameworks & REST/GraphQL APIs',
-      'Agile integration into your Jira/GitHub workflows',
+      'Senior engineers (5+ years average experience)',
+      'Clean TypeScript code and quick onboarding',
+      'Modern frontend frameworks and REST/GraphQL APIs',
+      'Integration into your Jira/GitHub workflows',
     ],
   },
   {
@@ -49,12 +49,12 @@ const staffAugmentation = [
     title: 'DevOps Engineers',
     badge: 'Cloud & Infrastructure',
     description:
-      'Infrastructure specialists ensuring zero-downtime CI/CD pipelines, containerization, cloud migration, and scalable Kubernetes orchestration.',
+      'Infrastructure specialists focused on CI/CD pipelines, containerization, cloud setup, and Kubernetes orchestration.',
     highlights: [
-      'Docker, Kubernetes, Terraform & Ansible',
-      'AWS, GCP, Azure & Bare-Metal Cloud setup',
-      'Automated deployment pipelines (GitHub Actions/GitLab)',
-      '24/7 monitoring & proactive server hardening',
+      'Docker, Kubernetes, Terraform, and Ansible',
+      'AWS, GCP, Azure, and bare-metal server setups',
+      'Automated deployment pipelines via GitHub Actions and GitLab',
+      'System monitoring and security hardening',
     ],
   },
   {
@@ -62,12 +62,12 @@ const staffAugmentation = [
     title: 'Technical PMs & Team Leaders',
     badge: 'Leadership & Delivery',
     description:
-      'Experienced technical leaders to guide roadmap execution, unblock developers, enforce code quality standards, and streamline cross-functional delivery.',
+      'Technical leaders to manage product roadmaps, unblock developers, maintain code quality standards, and coordinate delivery.',
     highlights: [
-      'Scrum & Kanban team management',
-      'Technical architecture guidance & code reviews',
-      'Clear stakeholder communication & sprint tracking',
-      'Risk mitigation & deadline adherence',
+      'Scrum and Kanban management',
+      'Architecture guidance and code reviews',
+      'Stakeholder updates and sprint planning',
+      'Risk management and milestone tracking',
     ],
   },
 ];
@@ -78,12 +78,12 @@ const turnkeyProjects = [
     title: 'Websites & Web Applications',
     badge: 'End-to-End Build',
     description:
-      'Custom web platforms, portals, and enterprise web applications designed for extreme speed, SEO perfection, accessibility, and high conversion rates.',
+      'Custom web platforms and enterprise applications built for performance, SEO, accessibility, and clean design.',
     highlights: [
-      'Next.js 15+ App Router & Server Components',
-      'Pixel-perfect responsive UX/UI design',
-      'Blazing fast performance & Lighthouse score 95+',
-      'SEO optimization & Analytics integration',
+      'Next.js 15+ App Router and Server Components',
+      'Responsive UX/UI design',
+      'Fast page load times',
+      'SEO setup and analytics integration',
     ],
   },
   {
@@ -91,12 +91,12 @@ const turnkeyProjects = [
     title: 'Secure Corporate VPN & Networks',
     badge: 'Cybersecurity',
     description:
-      'Custom-configured encrypted VPNs (WireGuard / Tailscale / OpenVPN) to connect distributed enterprise teams securely to internal servers.',
+      'Configured encrypted VPNs (WireGuard, Tailscale, or OpenVPN) to connect distributed teams to internal servers.',
     highlights: [
-      'Next-gen WireGuard & Tailscale setup',
+      'WireGuard and Tailscale setup',
       'Multi-factor authentication (MFA/SSO)',
       'Encrypted point-to-point mesh networks',
-      'Granular zero-trust access policies',
+      'Zero-trust access policies',
     ],
   },
   {
@@ -104,12 +104,12 @@ const turnkeyProjects = [
     title: 'Remote Desktop & Workspaces',
     badge: 'Virtual Office',
     description:
-      'Turnkey virtual desktop environments (VDI) and secure remote access platforms enabling your workforce to work safely from anywhere in the world.',
+      'Virtual desktop environments (VDI) and secure remote access platforms enabling teams to work safely from anywhere.',
     highlights: [
-      'High-performance Virtual Desktop Infrastructure',
-      'Secure centralized file management',
+      'Virtual Desktop Infrastructure',
+      'Centralized file management',
       'Encrypted remote session isolation',
-      'Disaster recovery & automated backups',
+      'Automated backups and recovery options',
     ],
   },
   {
@@ -117,12 +117,12 @@ const turnkeyProjects = [
     title: 'Infrastructure Audit & Migration',
     badge: 'Systems Overhaul',
     description:
-      'Deep technical audit of legacy applications, server architecture, and security policies followed by seamless cloud or hybrid server migration.',
+      'Audit of legacy applications, server architecture, and security policies, followed by cloud or hybrid server migration.',
     highlights: [
-      'Security audit & vulnerability scanning',
-      'Legacy monolith to microservices migration',
-      'Cost-optimization of cloud hosting bills',
-      'Zero-data-loss migration strategy',
+      'Security audits and vulnerability scans',
+      'Monolith to microservices migration',
+      'Cost optimization of cloud infrastructure',
+      'Migration planning without data loss',
     ],
   },
 ];
@@ -147,8 +147,7 @@ export function Services() {
             Flexible Engagement Models Tailored to Your Growth
           </Title>
           <Text c="dimmed" fz="lg" maw={650} ta="center">
-            Whether you need dedicated senior engineers to boost your internal squad or full turnkey
-            delivery of web applications and IT infrastructure, MOTHERBOARD delivers.
+            Hire senior engineers to expand your team, or let us handle end-to-end delivery of your web applications and IT infrastructure.
           </Text>
         </Stack>
 
