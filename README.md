@@ -1,33 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is a [Next.js](https://nextjs.org) project configured to use **[pnpm](https://pnpm.io/)** as its package manager.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+Ensure you have [pnpm](https://pnpm.io/installation) installed on your system.
+
+### Installation
+
+Install dependencies:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Running the Development Server
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Start the development server:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+pnpm dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
+
+You can start editing the main page by modifying [`src/app/page.tsx`](src/app/page.tsx). The page auto-updates as you edit the file.
+
+### Available Scripts
+
+- `pnpm dev`: Starts the Next.js development server.
+- `pnpm build`: Builds the application for production.
+- `pnpm start`: Starts the production server after building.
+- `pnpm lint`: Runs ESLint to check for code issues.
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+To learn more about Next.js and pnpm, check out the following resources:
 
+- [pnpm Documentation](https://pnpm.io/documentation) - learn about pnpm features and CLI commands.
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
 ## Deploy on Netlify
 
@@ -39,8 +51,8 @@ The easiest way to deploy this Next.js app on Netlify is via continuous deployme
 2. Log in to [Netlify](https://app.netlify.com/).
 3. Click **Add new site** > **Import an existing project**.
 4. Connect your Git provider and select this repository.
-5. Netlify will automatically detect Next.js and apply the settings from [`netlify.toml`](file:///home/przemek/work/priv/motherboard_webpage/netlify.toml):
-   - **Build command:** `npm run build`
+5. Netlify will automatically detect Next.js and apply the settings from [`netlify.toml`](netlify.toml):
+   - **Build command:** `pnpm build`
    - **Publish directory:** `.next`
 6. Click **Deploy site**.
 
@@ -57,6 +69,6 @@ npx netlify-cli deploy --build --prod
 
 ### Configuration
 
-This project includes a [`netlify.toml`](file:///home/przemek/work/priv/motherboard_webpage/netlify.toml) file preconfigured with the `@netlify/plugin-nextjs` plugin for optimal Server-Side Rendering (SSR), Server Actions, and API route support.
+This project includes a [`netlify.toml`](netlify.toml) file preconfigured with the `@netlify/plugin-nextjs` plugin for optimal Server-Side Rendering (SSR), Server Actions, and API route support.
 
 For more details, check out the [Netlify Next.js Documentation](https://docs.netlify.com/integrations/frameworks/next-js/).
