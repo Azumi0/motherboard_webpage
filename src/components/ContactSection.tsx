@@ -23,11 +23,7 @@ import {
   IconMapPin,
   IconFileText,
   IconBuildingSkyscraper,
-  IconCreditCard,
-  IconExternalLink,
-  IconAt,
   IconClock,
-  IconBuildingBank,
 } from '@tabler/icons-react';
 
 export function ContactSection() {
@@ -37,9 +33,6 @@ export function ContactSection() {
   const nipClipboard = useClipboard({ timeout: 2000 });
   const krsClipboard = useClipboard({ timeout: 2000 });
   const addressClipboard = useClipboard({ timeout: 2000 });
-  const ibanClipboard = useClipboard({ timeout: 2000 });
-  const wiseTagClipboard = useClipboard({ timeout: 2000 });
-  const wiseLinkClipboard = useClipboard({ timeout: 2000 });
 
   return (
     <Box
@@ -54,17 +47,17 @@ export function ContactSection() {
       <Container size="xl">
         <Stack align="center" gap="xs" mb={{ base: 40, md: 50 }}>
           <Badge color="cyan" size="lg" radius="sm">
-            Direct Communication, Registry &amp; Payment Details
+            Direct Communication &amp; Registry
           </Badge>
           <Title order={2} fz={{ base: '2rem', sm: '2.8rem' }} ta="center" fw={800}>
             Get in Touch &amp; Company Info
           </Title>
           <Text c="dimmed" fz="lg" maw={700} ta="center">
-            Reach out directly to discuss your project, view official corporate registration details, or access company payment links.
+            Reach out directly to discuss your project or view official corporate registration details.
           </Text>
         </Stack>
 
-        <SimpleGrid cols={{ base: 1, md: 3 }} spacing={{ base: 'lg', md: 'xl' }}>
+        <SimpleGrid cols={{ base: 1, md: 2 }} spacing={{ base: 'lg', md: 'xl' }}>
           {/* 1. Direct Contact Card */}
           <Paper
             className="glass-card glow-box"
@@ -417,207 +410,6 @@ export function ContactSection() {
                       {addressClipboard.copied ? 'Copied' : 'Copy'}
                     </Button>
                   </Tooltip>
-                </Group>
-              </Paper>
-            </Stack>
-          </Paper>
-
-          {/* 3. Official Payment & Banking Details Box */}
-          <Paper
-            id="payment-info"
-            className="glass-card glow-box"
-            p={{ base: 'lg', sm: 'xl' }}
-            radius="xl"
-            style={{
-              background: 'linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(7, 9, 14, 0.95) 100%)',
-              border: '1px solid rgba(0, 240, 255, 0.3)',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-            }}
-          >
-            <Box mb="md">
-              <Group justify="space-between" align="center" mb="md">
-                <Badge color="cyan" variant="gradient" gradient={{ from: 'cyan', to: 'blue' }}>
-                  PAYMENT DETAILS
-                </Badge>
-                <Text size="xs" c="cyan.4" fw={600}>
-                  Global Bank &amp; Wise
-                </Text>
-              </Group>
-
-              <Title order={3} fz="1.35rem" fw={700} mb="xs">
-                Banking &amp; Transfers
-              </Title>
-              <Text size="sm" c="dimmed">
-                Official company IBAN bank account details and instant Wise payment channels.
-              </Text>
-            </Box>
-
-            <Stack gap="md" style={{ flex: 1, justifyContent: 'flex-start' }}>
-              {/* IBAN Tile */}
-              <Paper
-                p="md"
-                radius="lg"
-                style={{
-                  background: 'rgba(0, 240, 255, 0.04)',
-                  border: '1px solid rgba(0, 240, 255, 0.15)',
-                }}
-              >
-                <Group justify="space-between" align="center" wrap="nowrap" gap="sm">
-                  <Group gap="sm" wrap="nowrap" style={{ overflow: 'hidden' }}>
-                    <ThemeIcon size={40} radius="md" color="cyan" variant="light" style={{ flexShrink: 0 }}>
-                      <IconBuildingBank size={20} />
-                    </ThemeIcon>
-                    <Box style={{ overflow: 'hidden' }}>
-                      <Text size="xs" c="dimmed" fw={600}>
-                        IBAN ACCOUNT NUMBER
-                      </Text>
-                      <Text
-                        fw={800}
-                        fz="0.95rem"
-                        c="cyan.3"
-                        style={{
-                          fontFamily: 'var(--font-geist-mono)',
-                          whiteSpace: 'nowrap',
-                        }}
-                      >
-                        BE98 9058 9211 7693
-                      </Text>
-                    </Box>
-                  </Group>
-
-                  <Tooltip label={ibanClipboard.copied ? 'Copied!' : 'Copy IBAN'}>
-                    <Button
-                      size="xs"
-                      variant="light"
-                      color={ibanClipboard.copied ? 'teal' : 'cyan'}
-                      leftSection={
-                        ibanClipboard.copied ? <IconCheck size={14} /> : <IconCopy size={14} />
-                      }
-                      onClick={() => ibanClipboard.copy('BE98905892117693')}
-                      aria-label="Copy IBAN BE98905892117693"
-                      style={{ flexShrink: 0 }}
-                    >
-                      {ibanClipboard.copied ? 'Copied' : 'Copy'}
-                    </Button>
-                  </Tooltip>
-                </Group>
-              </Paper>
-
-              {/* WISE Tag Tile */}
-              <Paper
-                p="md"
-                radius="lg"
-                style={{
-                  background: 'rgba(0, 240, 255, 0.04)',
-                  border: '1px solid rgba(0, 240, 255, 0.15)',
-                }}
-              >
-                <Group justify="space-between" align="center" wrap="nowrap" gap="sm">
-                  <Group gap="sm" wrap="nowrap" style={{ overflow: 'hidden' }}>
-                    <ThemeIcon size={40} radius="md" color="cyan" variant="light" style={{ flexShrink: 0 }}>
-                      <IconAt size={20} />
-                    </ThemeIcon>
-                    <Box style={{ overflow: 'hidden' }}>
-                      <Text size="xs" c="dimmed" fw={600}>
-                        WISE TAG
-                      </Text>
-                      <Text
-                        fw={800}
-                        fz="1.05rem"
-                        c="cyan.3"
-                        style={{ fontFamily: 'var(--font-geist-mono)' }}
-                      >
-                        @motherboardspzoo
-                      </Text>
-                    </Box>
-                  </Group>
-
-                  <Tooltip label={wiseTagClipboard.copied ? 'Copied!' : 'Copy Wise Tag'}>
-                    <Button
-                      size="xs"
-                      variant="light"
-                      color={wiseTagClipboard.copied ? 'teal' : 'cyan'}
-                      leftSection={
-                        wiseTagClipboard.copied ? <IconCheck size={14} /> : <IconCopy size={14} />
-                      }
-                      onClick={() => wiseTagClipboard.copy('@motherboardspzoo')}
-                      aria-label="Copy Wise Tag @motherboardspzoo"
-                      style={{ flexShrink: 0 }}
-                    >
-                      {wiseTagClipboard.copied ? 'Copied' : 'Copy'}
-                    </Button>
-                  </Tooltip>
-                </Group>
-              </Paper>
-
-              {/* WISE Payment Link Tile */}
-              <Paper
-                p="md"
-                radius="lg"
-                style={{
-                  background: 'rgba(0, 240, 255, 0.04)',
-                  border: '1px solid rgba(0, 240, 255, 0.15)',
-                }}
-              >
-                <Group justify="space-between" align="center" wrap="nowrap" gap="sm">
-                  <Group gap="sm" wrap="nowrap" style={{ overflow: 'hidden' }}>
-                    <ThemeIcon size={40} radius="md" color="cyan" variant="light" style={{ flexShrink: 0 }}>
-                      <IconCreditCard size={20} />
-                    </ThemeIcon>
-                    <Box style={{ overflow: 'hidden' }}>
-                      <Text size="xs" c="dimmed" fw={600}>
-                        WISE PAYMENT LINK
-                      </Text>
-                      <Text
-                        component="a"
-                        href="https://wise.com/pay/business/motherboardspzoo"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        fw={700}
-                        fz="0.85rem"
-                        c="cyan.3"
-                        style={{
-                          textDecoration: 'none',
-                          display: 'block',
-                          whiteSpace: 'nowrap',
-                          textOverflow: 'ellipsis',
-                          overflow: 'hidden',
-                        }}
-                      >
-                        wise.com/pay/business/motherboardspzoo
-                      </Text>
-                    </Box>
-                  </Group>
-
-                  <Group gap={6} wrap="nowrap" style={{ flexShrink: 0 }}>
-                    <Button
-                      component="a"
-                      href="https://wise.com/pay/business/motherboardspzoo"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      size="xs"
-                      variant="gradient"
-                      gradient={{ from: 'cyan', to: 'blue', deg: 135 }}
-                      rightSection={<IconExternalLink size={12} />}
-                      aria-label="Pay via Wise payment page"
-                    >
-                      Pay
-                    </Button>
-
-                    <Tooltip label={wiseLinkClipboard.copied ? 'Copied!' : 'Copy Link'}>
-                      <Button
-                        size="xs"
-                        variant="light"
-                        color={wiseLinkClipboard.copied ? 'teal' : 'cyan'}
-                        onClick={() => wiseLinkClipboard.copy('https://wise.com/pay/business/motherboardspzoo')}
-                        aria-label="Copy Wise payment link"
-                      >
-                        {wiseLinkClipboard.copied ? <IconCheck size={14} /> : <IconCopy size={14} />}
-                      </Button>
-                    </Tooltip>
-                  </Group>
                 </Group>
               </Paper>
             </Stack>
